@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF to DOCX Converter</title>
+  <link rel="stylesheet" href="{{  url_for('static',filename='styling.css')  }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam&family=Oswald:wght@600&family=Tangerine&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div id="first"><h1 id="head">PDF to DOCX Converter</h1></div>
+    <form action="{{ url_for('convert_pdf_to_docx') }}" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="pdf-file">Select a PDF file:</label>
+        <input type="file" name='file' id="pdf-file" accept=".pdf" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Convert to DOCX</button>
+      </div>
+    </form>
+    <div id="output" class="output" style="display: none;"></div>
+  </div>
+
+</body>
+</html>
